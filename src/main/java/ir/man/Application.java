@@ -45,14 +45,14 @@ public class Application  /*تمام متدهای بین را اجرا می کن
                 configurableEnvironment.getSystemProperties().forEach((s, o) -> {
                     System.out.println(s + ":" + o);
                 });
-            System.out.println(">>> " + environment.acceptsProfiles(activeProfiles -> activeProfiles.test("dev")));
-            System.out.println(">>>>>> In ApplicationRunner Method");
+            System.out.println(">" + environment.acceptsProfiles(activeProfiles -> activeProfiles.test("dev")));
+            System.out.println(">> In ApplicationRunner Method");
             System.out.println(String.format("application-%s.configuration with Name: %s  Description: %s Message: %s"
                     , environment.getActiveProfiles()[0]
                     , environment.getProperty("app.name")
                     , environment.getProperty("app.description")
                     , environment.getProperty("app.message")));
-            System.out.println(">>>>>>>>> " + environment.getProperty("JAVA_HOME"));
+            System.out.println(">>> " + environment.getProperty("JAVA_HOME"));
         };
     }
 
