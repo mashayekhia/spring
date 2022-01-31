@@ -1,0 +1,1 @@
+<div>TILES : Footer Fragment</div>

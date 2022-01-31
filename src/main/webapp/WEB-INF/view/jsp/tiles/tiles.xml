@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Fondation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+    <definition name="layout.basic" template="/WEB-INF/view/jsp/tiles/layout/basic.jsp">
+        <put-attribute name="title" value="TILES : Tiles Project"/>
+        <put-attribute name="header" value="/WEB-INF/view/jsp/tiles/layout/header.jsp"/>
+        <put-attribute name="body" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/view/jsp/tiles/layout/footer.jsp"/>
+    </definition>
+    <definition name="prods" extends="layout.basic">
+        <put-attribute name="body" value="/WEB-INF/view/jsp/product/prods.jsp"/>
+    </definition>
+    <definition name="*" extends="layout.basic">
+        <!-- {1} : position of star -->
+        <put-attribute name="body" value="/WEB-INF/view/jsp/product/{1}.jsp"/>
+    </definition>
+    <definition name="*/*-tile" extends="layout.basic">
+        <!-- {1} : position of star -->
+        <put-attribute name="body" value="/WEB-INF/view/jsp/product/secured/{1}/{2}.jsp"/>
+    </definition>
+</tiles-definitions>
